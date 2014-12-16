@@ -1,12 +1,32 @@
+<?php
+// Start the Session
+session_start();
+?>
 <!doctype html>
 <html>
 	<head>
 		<meta charset="utf-8">
-		<!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-		<title>Varun's Blog for all Authors</title><!--
-		<script src="/js/auth.js" type="text/javascript" charset="utf-8" async defer></script>
-		-->
-		<script src="/javascripts/auth.js" type="text/javascript" charset="utf-8" async defer></script>
+		<title>Varun's Blog for all Authors</title>
+		<script type="text/javascript">
+			function authenticate() {
+			    var auth = new XMLHttpRequest();
+			    var uname = document.getElementById('username').value;
+			    var pass = document.getElementById('password').value;
+			    var str = "username=" + uname + "&password=" + pass;
+			    auth.open('POST', '/auth.php');
+			    auth.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			    auth.send(str);
+			    auth.onreadystatechange = function() {
+			        document.getElementById('insert').innerHTML = auth.responseText;
+			    }
+			}
+
+			function reset() {
+				var reset_ajax = new XMLHttpRequest();
+				reset_ajax.open("GET", "reset.php");
+				reset.send();
+			}
+		</script>
 	</head>
 	<body>
 		<div class="container">
@@ -18,6 +38,7 @@
 					<button onclick="authenticate()" type="button">Submit</button>
 				</fieldset>
 			</form>
+			<button type="button" onclick="reset()">RESET SQL TABLE</button>
 		</div>
 		<p id="insert"></p>
 	</body>

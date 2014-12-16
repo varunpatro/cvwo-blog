@@ -1,15 +1,16 @@
 <?php
 
-$header = "content-type: application/json";
-header($header);
-
-$uname = $_GET['username'];
-$pass = $_GET['password'];
+$uname = $_POST['username'];
+$pass = $_POST['password'];
 
 $data = array(
 	"username" => $uname,
 	"password" => $pass
 	);
 echo json_encode($data);
+
+// $_SESSION["login"] = true;
+// $_SESSION["login"] = false;
+
 
 ?>
