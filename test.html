@@ -1,0 +1,27 @@
+<html>
+<head><title>Test Page for PHP</title></head>
+<script>
+	function func() {
+		var uname = document.getElementById('username').value;
+		var name = document.getElementById('name').value;
+		var send = new XMLHttpRequest();
+		send.open("POST", "post.php");
+		send.setRequestHeader("Content-type","application/json");
+		send.send(JSON.stringify({"username": uname,
+			"name": name}));
+		send.onreadystatechange = function() {
+			document.getElementById("insert").innerHTML = JSON.parse(send.responseText).username;
+		}
+		
+	}
+</script>
+<body>
+	<!-- <form method="POST" action="post.php"> -->
+	<input type="text" placeholder="username" name="username" id="username">
+	<input type="text" placeholder="name" name="name" id="name">
+	<button onclick="func()">Submit</button>
+	<!-- </form> -->
+
+	<p id="insert"></p>
+</body
+</html>

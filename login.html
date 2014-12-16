@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+		<title>Varun's Blog for all Authors</title><!--
+		<script src="/js/auth.js" type="text/javascript" charset="utf-8" async defer></script>
+		-->
+		<script src="/javascripts/auth.js" type="text/javascript" charset="utf-8" async defer></script>
+	</head>
+	<body>
+		<div class="container">
+			<form>
+				<fieldset>
+					<legend><h3 class="form-signin-heading">Please sign in</h2></legend>
+					<input id="username" type="username" name="username" placeholder="username" required>
+					<input id="password" type="password" name="password" placeholder="password" required>
+					<button onclick="authenticate()" type="button">Submit</button>
+				</fieldset>
+			</form>
+		</div>
+		<p id="insert"></p>
+	</body>
+</html>
