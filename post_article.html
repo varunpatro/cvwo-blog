@@ -1,0 +1,42 @@
+<?php
+session_start();
+?>
+<!doctype html>
+<html>
+	<head>
+		<title>Post Articles</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/signin.css">
+		<script src="javascripts/post_article.js"></script>
+		<script type="text/javascript">
+			function post_article() {
+				var art = document.getElementById('article').value;
+				var uname = document.getElementById('username').value;
+				var str = "uname=" + uname + "&art=" + art;
+				var post_art_req = new XMLHttpRequest();
+				post_art_req.open("POST", "post_article.php");
+				post_art_req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				post_art_req.onreadystatechange = function () {
+					console.log(post_art_req.responseText);
+				};
+				post_art_req.send(str);
+		}
+
+
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<form class="form-signin" role="form">
+				<fieldset>
+					<legend><h3 class="form-signin-heading">Please Post Your Article</h3></legend>
+					<input class="form-control article" id="username" type="text" name="username" placeholder="Username" required autofocus>
+					<br>
+					<textarea id="article" name="article" class="form-control" rows="10" placeholder="Article"></textarea>
+					<br>
+					<button onclick="post_article()" type="button" class="btn btn-lg btn-primary btn-block">Post Article</button>
+				</fieldset>
+			</form>
+		</div>
+	</body>
+</html>
