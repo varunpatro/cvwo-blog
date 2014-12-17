@@ -1,8 +1,9 @@
 <?php
 
-$uname = $_POST["username"];
-$pass = $_POST["password"];
+$uname = $_POST["uname"];
+$pass = $_POST["pass"];
 
 
-
+echo $uname;
+echo $pass;
 ?>

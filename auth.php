@@ -1,7 +1,7 @@
 <?php
 
-$uname = $_POST['username'];
-$pass = $_POST['password'];
+$uname = $_POST['uname'];
+$pass = $_POST['pass'];
 
 $data = array(
 	"username" => $uname,
