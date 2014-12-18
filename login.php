@@ -21,14 +21,13 @@ session_start();
 					<input class="form-control" id="password" type="password" name="password" placeholder="password" required>
 					<br>
 					<button onclick="authenticate()" type="button" class="btn btn-lg btn-primary btn-block">Login</button>
-					<br>
-					<button onclick="reset()" type="button" class="btn btn-primary btn-lg">RESET SQL TABLE</button>
 				</fieldset>
 			</form>
 			<!-- <button onclick="reset()" type="button" class="btn btn-primary btn-lg">RESET SQL TABLE</button> -->
 			
 			<p id="insert">
 			<h4> <?php
+			require_once("nav.php");
 				if (!isset($_SESSION['logged_in'])) {
 					echo "Not logged in";
 				} else {

@@ -1,9 +1,7 @@
 <?php
 session_start();
-
-// require_once("conn.php");
-
 ?>
+
 <!doctype html>
 <html>
 	<head>
@@ -33,6 +31,7 @@ session_start();
 			</form>';
 			}
 			?>
+			<p class="insert"></p>
 		</div>
 	</body>
 </html>

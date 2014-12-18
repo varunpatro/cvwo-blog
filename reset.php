@@ -20,10 +20,21 @@ USE blog;
 DROP TABLE IF EXISTS users;
 CREATE TABLE users
 (
-	id 				INT UNSIGNED NOT NULL AUTO_INCREMENT, # Unique ID for the record
-	username 		VARCHAR(25) NOT NULL, 				  # Username for Writers
-	password 		VARCHAR(25) NOT NULL, 				  # Password for Writers
+	id 				INT UNSIGNED NOT NULL AUTO_INCREMENT, # Unique ID for the writer
+	username 		VARCHAR(25) NOT NULL, 				  # Writer's username
+	password 		VARCHAR(25) NOT NULL, 				  # Writer's password
 	reg_date		TIMESTAMP, 							  # Time of Registration
+	PRIMARY KEY 	(id)
+);
+
+DROP TABLE IF EXISTS articles;
+CREATE TABLE articles
+(
+	id 				INT UNSIGNED NOT NULL AUTO_INCREMENT, # Unique ID for the article
+	title 			VARCHAR(100), 						  # Article's title
+	article 		VARCHAR(8000), 						  # Article Content
+	author 			VARCHAR(25), 						  # Writer's username
+	reg_date		TIMESTAMP, 							  # Posting Time
 	PRIMARY KEY 	(id)
 );
 FILE;

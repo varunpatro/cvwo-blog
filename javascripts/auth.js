@@ -12,9 +12,3 @@ function authenticate() {
         document.getElementById('insert').innerHTML = auth.responseText;
     }
 }
-
-function reset() {
-    var reset_ajax = new XMLHttpRequest();
-    reset_ajax.open("GET", "reset.php");
-    reset_ajax.send();
-}
