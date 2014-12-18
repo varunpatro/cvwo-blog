@@ -1,6 +1,7 @@
 <?php
 // Start the Session
 session_start();
+
 ?>
 <!doctype html>
 <html>
@@ -27,6 +28,8 @@ session_start();
 			</form>
 			<!-- <button onclick="reset()" type="button" class="btn btn-primary btn-lg">RESET SQL TABLE</button> -->
 		</div>
-		<p id="insert"></p>
+		<p id="insert">
+			<?php echo "currently logged in as: " . $_SESSION['logged_in']; ?>
+		</p>
 	</body>
 </html>
