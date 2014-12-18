@@ -13,6 +13,8 @@ session_start();
 	<body>
 		<div class="container">
 			<?php
+			require_once("nav.php");
+			echo '<br>';
 
 			if (!isset($_SESSION["logged_in"])) {
 				echo '<h3>You\'re not logged in. <br><br> Please login to post an article: <br><br> <a class="btn btn-primary" href="login.php">Login</a></h3>';
@@ -26,7 +28,7 @@ session_start();
 					<br>
 					<textarea id="article" name="article" class="form-control" rows="10" placeholder="Article"></textarea>
 					<br>
-					<button onclick="post_article()" type="button" class="btn btn-lg btn-primary btn-block">Post Article</button>
+					<button id="post" onclick="post_article()" type="button" class="btn btn-lg btn-primary btn-block">Post Article</button>
 				</fieldset>
 			</form>';
 			}

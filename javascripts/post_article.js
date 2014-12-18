@@ -3,6 +3,7 @@ function post_article() {
     var art = document.getElementById('article');
     art.setAttribute("disabled", "");
     title.setAttribute("disabled", "");
+    document.getElementById('post').setAttribute("disabled", "");
     var str = "art=" + art.value + "&title=" + title.value;
     var post_art_req = new XMLHttpRequest();
     post_art_req.open("POST", "insert_article.php");

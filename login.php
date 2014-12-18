@@ -25,16 +25,11 @@ session_start();
 			</form>
 			<!-- <button onclick="reset()" type="button" class="btn btn-primary btn-lg">RESET SQL TABLE</button> -->
 			
-			<p id="insert">
-			<h4> <?php
+			<!-- <p id="insert"> -->
+			<h4 id="insert"> <?php
 			require_once("nav.php");
-				if (!isset($_SESSION['logged_in'])) {
-					echo "Not logged in";
-				} else {
-					echo "Currently Logged in as: " . $_SESSION['logged_in'];
-				}
 			?> </h4>
-			</p>
+			<!-- </p> -->
 		</div>
 	</body>
 </html>
