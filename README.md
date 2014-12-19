@@ -1,14 +1,16 @@
 Varun Patro
 A0131729E
 
-#Basic use cases
+#CVWO 2014 Assignment 1
+
+##Basic use cases
 
 1. Everyone can read all articles posted on the blog.
 2. To post articles, writers have to register accounts. 
 3. Writer's have the ability to delete/modify their posts.
 
 
-#Execution Plan
+##Execution Plan
 
 1. Convert all pages to modular format (use a view folder) and improve structure of directory.
 2. Create option to view all articles on the blog.
@@ -17,7 +19,7 @@ A0131729E
 5. Add features for readers: reading history, adding tags etc. (if time permits)
 
 
-#Problems facing
+##Problems facing
 
 1. Restrict access to specific files. 
 
