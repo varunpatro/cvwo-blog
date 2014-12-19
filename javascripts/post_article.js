@@ -4,7 +4,7 @@ function post_article() {
     art.setAttribute("disabled", "");
     title.setAttribute("disabled", "");
     document.getElementById('post').setAttribute("disabled", "");
-    var str = "art=" + art.value + "&title=" + title.value;
+    var str = "art=" + art.value.replace(/\n/g, "<br>") + "&title=" + title.value;
     var post_art_req = new XMLHttpRequest();
     post_art_req.open("POST", "insert_article.php");
     post_art_req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

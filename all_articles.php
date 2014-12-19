@@ -18,12 +18,9 @@ session_start();
 			$articles = $conn->query($sql_query);
 
 			if ($articles->num_rows > 0) {
-				echo "<table><tr><th>ID</th><th>Name</th></tr>";
-				//output data of each row
 				while ($row = $articles->fetch_assoc()) {
-					echo "<tr><td>".$row["id"]."</td><td>".$row["article"]." ".$row["title"]."</td></tr>";
+					echo ($row["article"]);
 				}
-				echo "</table>";
 			} else {
 				echo "0 results";
 			}

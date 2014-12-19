@@ -2,7 +2,7 @@ function add() {
     var uname = document.getElementById("uname");
     var pass = document.getElementById("pass");
     var repass = document.getElementById("repass");
-    
+
     if (repass.value === pass.value) {
         uname.setAttribute("disabled", "");
         pass.setAttribute("disabled", "");
