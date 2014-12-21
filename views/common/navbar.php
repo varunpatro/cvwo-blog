@@ -5,7 +5,7 @@ echo '<nav class="navbar-wrapper navbar-default navbar-fixed-top" role="navigati
 						<a href="/">Varun\'s Blog</a>
 				
 				
-						<a href="all_articles.php">All Articles</a>
+						<a href="/views/blog_articles.php">All Articles</a>
 						<a href="/views/login_page.php">Login</a>
 						<a href="/user/db_reset.php">Reset Database</a>
 						<a href="/views/signup_page.php">Add User</a>
