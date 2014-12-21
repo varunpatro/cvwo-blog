@@ -10,5 +10,8 @@ require_once("config/init.php");
 			$_SESSION['message'] = "";
 			?>
 		</p>
+		<div class="container">
+		<?php require_once("views/blog_articles.php"); ?>
+		</div>
 	</body>
 </html>
