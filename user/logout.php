@@ -9,6 +9,6 @@ session_unset();
 // destroy the session 
 session_destroy(); 
 
-header("Location: /config/message_passing.php?m=logout")
+header("Location: /config/message_passing.php?m=logout");
 
 ?>

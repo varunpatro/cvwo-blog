@@ -8,7 +8,8 @@
 
 2. init.php
 
-	creates/resumes a session
+	loads function at the start of each session. 
+		features: creates/resumes a session
 
 3. message_passing.php
 

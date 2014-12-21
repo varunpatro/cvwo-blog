@@ -6,10 +6,10 @@ echo '<nav class="navbar-wrapper navbar-default navbar-fixed-top" role="navigati
 				
 				
 						<a href="all_articles.php">All Articles</a>
-						<a href="login.php">Login</a>
+						<a href="/views/login_page.php">Login</a>
 						<a href="reset.php">Reset Database</a>
-						<a href="add_user.php">Add User</a>
-						<a href="post_article.php">Post Article</a>
+						<a href="/views/add_user.php">Add User</a>
+						<a href="/views/post_article.php">Post Article</a>
 						<a href="/user/logout.php">Log Out</a>
 						<p class="navbar-brand navbar-fixed-bottom">';
 						if (!isset($_SESSION['logged_in'])) {
