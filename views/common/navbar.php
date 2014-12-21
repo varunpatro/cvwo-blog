@@ -15,7 +15,7 @@ echo '<nav class="navbar-wrapper navbar-default navbar-fixed-top" role="navigati
 						if (!isset($_SESSION['logged_in'])) {
 							echo "Not logged in";
 						} else {
-							echo "Currently Logged in as: " . $_SESSION['name'];
+							echo "Currently Logged in as: " . $_SESSION['username'];
 						}
 			echo '</p>
 				
