@@ -5,6 +5,7 @@ require_once("../config/init.php");
 	<body>
 		<?php 
 		require_once("../views/common/navbar.php"); ?>
+		<p> <?php echo $_SESSION['message']; $_SESSION['message'] = "" ?>
 		<p>
 			<form class="form-signin" role="form" action="/user/login.php" method="POST">
 				<fieldset>

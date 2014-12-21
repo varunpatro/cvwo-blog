@@ -6,7 +6,7 @@ require_once("../config/init.php");
 		<?php 
 		require_once("../views/common/navbar.php"); ?>
 		<p>
-			<form class="form-signin" role="form" action="/user/add.php" method="POST">
+			<form class="form-signin" role="form" action="/user/add_user.php" method="POST">
 				<fieldset>
 					<legend><h3 class="form-signin-heading">Please sign in</h3></legend>
 					<input class="form-control" id="name" type="text" name="name" placeholder="name" required autofocus>

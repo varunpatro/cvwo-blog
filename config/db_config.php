@@ -30,6 +30,26 @@ function add($u, $p, $n) {
 	$add_user->execute();
 }
 
+function login_query($login_username) {
+	global $conn;
+	return $conn->query("SELECT * FROM users WHERE username = \"$login_username\";");	
+}
+
+$article = $conn->prepare("INSERT INTO articles (title, body, author) VALUES (?, ?, ?)");
+$article->bind_param("sss", $title, $body, $author);
+
+function post($t, $b, $a) {
+	global $title;
+	global $body;
+	global $author;
+	global $article;
+	$title = $t;
+	$body = $b;
+	$author = $a;
+	$article->execute();
+}
+
+
 function db_reset () {
 	global $conn;
 	$db_reset_query = <<<RESET
@@ -51,7 +71,7 @@ function db_reset () {
 	(
 		id 				INT UNSIGNED NOT NULL AUTO_INCREMENT, # Unique ID for the article
 		title 			VARCHAR(100), 						  # Article's title
-		article 		VARCHAR(8000), 						  # Article Content
+		body 	 		VARCHAR(8000), 						  # Article Content
 		author 			VARCHAR(25), 						  # Writer's username
 		reg_date		TIMESTAMP, 							  # Posting Time
 		PRIMARY KEY 	(id)

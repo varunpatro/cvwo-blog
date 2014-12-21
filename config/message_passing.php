@@ -11,10 +11,10 @@ switch ($message_to_process) {
 		$message_to_display = "You have successfully logged out.";
 		break;
 	case "login":
-		$message_to_display = $_SESSION['logged_in'] . ", you have successfully logged in.";
+		$message_to_display = $_SESSION['name'] . ", you have successfully logged in.";
 		break;
 	case "add_user":
-		$message_to_display = $_SESSION['logged_in'] . ", you have successfully created an account.";
+		$message_to_display = $_SESSION['name'] . ", you have successfully created an account.";
 		break;
 	case "post":
 		$message_to_display = "Successfully posted article: " . $_SESSION['last_article_title'];

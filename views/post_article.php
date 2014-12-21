@@ -13,10 +13,10 @@ require_once("../config/init.php");
 			} else {
 				echo '<form role="form" action="/user/post.php" method="POST">
 				<fieldset>
-					<legend><h3 class="form-signin-heading">Please sign in</h3></legend>
-					<input class="form-control" id="title" type="text" name="title" placeholder="title" required autofocus>
+					<legend><h3 class="form-signin-heading">Post Article</h3></legend>
+					<input class="form-control" id="article_title" type="text" name="article_title" placeholder="title" required autofocus>
 					<br>
-					<textarea name="article" placeholder="article" id="article" required></textarea>
+					<textarea name="article_body" placeholder="body" id="article_body" required></textarea>
 					<button type="submit">Post</button>
 				</fieldset>
 			</form>';
