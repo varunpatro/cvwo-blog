@@ -9,7 +9,8 @@ require_once("../config/init.php");
 			<form class="form-signin" role="form" action="/user/add.php" method="POST">
 				<fieldset>
 					<legend><h3 class="form-signin-heading">Please sign in</h3></legend>
-					<input class="form-control" id="username" type="username" name="username" placeholder="username" required autofocus>
+					<input class="form-control" id="name" type="text" name="name" placeholder="name" required autofocus>
+					<input class="form-control" id="username" type="text" name="username" placeholder="username" required>
 					<input class="form-control" id="password" type="password" name="password" placeholder="password" required>
 					<input class="form-control" id="re-password" type="password" name="re-password" placeholder="password" required>
 					<br>
