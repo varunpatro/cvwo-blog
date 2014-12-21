@@ -24,7 +24,7 @@ CREATE TABLE users
 	username 		VARCHAR(25) NOT NULL, 				  # Writer's username
 	password 		VARCHAR(25) NOT NULL, 				  # Writer's password
 	reg_date		TIMESTAMP, 							  # Time of Registration
-	PRIMARY KEY 	(id)
+	PRIMARY KEY 	(id, username)
 );
 
 DROP TABLE IF EXISTS articles;
