@@ -26,3 +26,12 @@ A0131729E
 	In my source directory, I have many php files like auth.php, conn.php that I use to send form data to. How do I ensure that the only way to access these files like auth.php and conn.php is by sending form data.
 
 2. How to efficiently create a template for rendering web pages and also abstracting database queries to a single page request. 
+
+##ToDo
+
+1. add validation features for all forms
+2. add better UI
+3. create a writer's portal
+4. allow writer's to edit/delete their articles
+5. allow writers to add tags to the post
+6. allow users to search for posts with tags
