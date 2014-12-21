@@ -3,7 +3,7 @@
 require_once("../config/db_config.php");
 echo "<h2>Blog Articles</h2>";
 
-if (!($blog_articles = $conn->query("SELECT * FROM articles;"))) {
+if (!($blog_articles = $conn->query("SELECT * FROM articles ORDER BY id DESC;"))) {
 	echo "Querying articles failed: (" . $conn->errno . ") " . $conn->error;
 } 
 
@@ -18,7 +18,5 @@ if ($blog_articles->num_rows > 0) {
 } else {
 	echo "<p>No articles at present!</p>";
 }	
-
-
 
 ?>
