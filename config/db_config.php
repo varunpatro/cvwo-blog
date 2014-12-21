@@ -35,8 +35,10 @@ function login_query($login_username) {
 	return $conn->query("SELECT * FROM users WHERE username = \"$login_username\";");	
 }
 
+
 $article = $conn->prepare("INSERT INTO articles (title, body, author) VALUES (?, ?, ?)");
 $article->bind_param("sss", $title, $body, $author);
+
 
 function post($t, $b, $a) {
 	global $title;
@@ -47,8 +49,8 @@ function post($t, $b, $a) {
 	$body = $b;
 	$author = $a;
 	$article->execute();
+	echo "success";
 }
-
 
 function db_reset () {
 	global $conn;
