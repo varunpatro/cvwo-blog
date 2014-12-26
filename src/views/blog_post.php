@@ -24,7 +24,7 @@ if ($array_of_posts->num_rows > 0) {
 <h2><?php echo $blog_post["title"]; ?></h2>
 <h4><?php echo "Written by: $writer";?></h4>
 <h4><?php echo "Posted on: {$blog_post['reg_date']}"; ?></h4>
-<p><?php echo str_replace("\n", "<br>", $blog_post["body"]); ?></p>
+<p class="lead"><?php echo str_replace("\n", "<br>", $blog_post["body"]); ?></p>
 </article>
 </body>
 </html>
