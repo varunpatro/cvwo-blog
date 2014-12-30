@@ -16,27 +16,38 @@ require_once("../config/init.php");
 					
 					<fieldset>
 						<legend><h3 class="form-signin-heading">Please sign in</h3></legend>
-						<div class="control-group">
-							<div class="controls controls-row">
-								<label class="control-label" for="username">Username</label>
-								<input class="input-block-level" id="username" type="username" name="username" placeholder="username" required autofocus>
+						<div class="form-group">
+							
+							<label class="control-label col-sm-2" for="username">Username</label>
+							<input class="col-sm-10 form-control" id="username" type="username" name="username" placeholder="username" required autofocus>
+							
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="btn btn-default">Sign in</button>
 							</div>
 						</div>
-						<div class="control-group">
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+							<div class="col-sm-10">
+								<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+							</div>
+						</div>
+						<div class="form-group">
 							<div class="controls">
 								<label class="control-label">Password</label>
-								<input class="input-small" id="password" type="password" name="password" placeholder="password" required>
+								<input class="form-control" id="password" type="password" name="password" placeholder="password" required>
 							</div>
 						</div>
-						<div class="control-group">
+						<div class="form-group">
 							<div class="controls">
 								<button type="submit" class="btn btn-default">Login</button>
 							</div>
 						</div>
 					</fieldset>
-				</form>
+				</div>
+				</p>
 			</div>
-			</p>
-		</div>
-	</body>
-</html>
+			
+		</body>
+	</html>

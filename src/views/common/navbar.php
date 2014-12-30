@@ -6,7 +6,7 @@ echo '<div class="container"><div class="navbar">
 				<ul class="nav nav-tabs">
 								
 										
-												<li><a href="/"><span class="glyphicon glyphicon-search"></span>Home</a></li>
+												<li><a href="/">Home</a></li>
 												<li><a href="/user/db_reset.php">Reset Database</a></li>
 												<li><a href="/views/signup_page.php">Add User</a></li>
 												<li><a href="/views/post_article.php">Post Article</a></li>'; 

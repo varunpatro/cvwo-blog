@@ -14,8 +14,7 @@ require_once("../config/init.php");
 					<input class="form-control" id="username" type="text" name="username" placeholder="username" value="<?php echo $_SESSION['temp_username'];$_SESSION['temp_username'] = ""; ?>" required>
 					<input class="form-control" id="password" type="password" name="password" placeholder="password" required>
 					<input class="form-control" id="re-password" type="password" name="re-password" placeholder="password" required>
-					<br>
-					<button type="submit">Login</button>
+					<button type="submit" class="btn btn-primary">Login</button>
 				</fieldset>
 			</form>
 		</p>
