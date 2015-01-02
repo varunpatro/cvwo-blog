@@ -9,7 +9,12 @@ require_once("config/init.php");
 		<div class="container content-secondary">
 			<?php require_once("views/common/navbar.php");
 			require_once("views/common/alert.php");
-			alert('success');
+			if (!isset($_SESSION['alert_status'])) {
+				alert('success');
+			} else {
+				alert($_SESSION['alert_status']);
+				unset($_SESSION['alert_status']);
+			}
 			?>
 			
 			<div class="container">
