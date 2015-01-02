@@ -19,6 +19,9 @@ switch ($message_to_process) {
 	case "post":
 		$message_to_display = "Successfully posted article: " . $_SESSION['last_article_title'];
 		break;
+	case "alter":
+		$message_to_display = "Successfully edited article: " . $_SESSION['last_article_title'];
+		break;	
 	case "db_reset":
 		$message_to_display = "Database Reset.";
 		break;
