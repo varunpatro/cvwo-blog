@@ -29,9 +29,11 @@ A0131729E
 
 ##ToDo
 
-1. add validation features for all forms
-2. add better UI
-3. create a writer's portal
-4. allow writer's to edit/delete their articles
+1. add validation features for all forms -- done
+2. add better UI -- done
+3. create a writer's portal -- done
+4. allow writer's to edit/delete their articles -- done
 5. allow writers to add tags to the post
 6. allow users to search for posts with tags
+7. allow users to comment on the posts
+8. allow users to share posts
