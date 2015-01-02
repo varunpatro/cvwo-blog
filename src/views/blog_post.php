@@ -1,6 +1,7 @@
 <?php
 require_once("../config/db_config.php");
 $blog_id = $_GET['id'];
+$_SESSION['blog_id'] = $blog_id;
 $array_of_posts = $conn->query("SELECT * FROM articles WHERE id = $blog_id;");
 if ($array_of_posts->num_rows > 0) {
 	$blog_post = $array_of_posts->fetch_assoc();
@@ -25,7 +26,11 @@ if ($array_of_posts->num_rows > 0) {
 				<p>_______________</p>
 				<p class=""><?php echo str_replace("\n", "<br>", $blog_post["body"]); ?></p>
 				<p>_______________</p>
-				<p><?php require_once("../user/comments.php"); ?></p>
+				<div id="comments">
+					<p><?php require_once("../user/comments.php"); ?></p>
+					<p id="comment_form">
+					</p>
+				</div>
 			</article>
 		</div>
 	</body>

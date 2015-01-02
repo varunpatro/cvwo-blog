@@ -35,5 +35,6 @@ A0131729E
 4. allow writer's to edit/delete their articles -- done
 5. allow writers to add tags to the post
 6. allow users to search for posts with tags
-7. allow users to comment on the posts
+7. allow users to comment on the posts -- done
 8. allow users to share posts
+9. redirection to the previous page instead of home page.

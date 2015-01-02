@@ -7,8 +7,10 @@ if (!isset($_SESSION['logged_in'])) {
 	$_SESSION['message'] = "You need to login to comment on an article. Please login here.";
 	header("Location: /views/login_page.php");
 } else {
-	add_comment($_SESSION['blog_id'], $_POST['comment_body'], $_SESSION['username']);
+	add_comment($_POST['comment_body'], $_SESSION['username'], $_SESSION['blog_id']);
+	unset($_SESSION['blog_id']);
 	header("Location: /config/message_passing.php?m=comment");
+	
 }
 	
 ?>

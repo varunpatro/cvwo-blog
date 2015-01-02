@@ -75,6 +75,18 @@ function can_alter($article_id) {
 	}
 }
 
+$add_comm = $conn->prepare("INSERT INTO comments (body, author, blog_id) VALUES (?, ?, ?)");
+$add_comm->bind_param("ssi", $comm_body, $comm_writer, $comm_id);
+
+
+function add_comment($b, $w, $i) {
+	global $comm_body, $comm_writer, $comm_id, $add_comm;
+	$comm_body = $b;
+	$comm_writer = $w;
+	$comm_id = $i;
+	$add_comm->execute();
+}
+
 function db_reset () {
 	global $conn;
 	$db_reset_query = <<<RESET
@@ -106,6 +118,7 @@ function db_reset () {
 	CREATE TABLE comments
 	(
 		id 				INT UNSIGNED NOT NULL AUTO_INCREMENT, # Unique ID for the comment
+		blog_id 		INT UNSIGNED,						  # Blog Post's ID
 		body 			VARCHAR(2000), 						  # Comment's body
 		author 			VARCHAR(25), 						  # Comment's writer
 		reg_date 		TIMESTAMP, 							  # Posting Time
