@@ -32,7 +32,7 @@ if ($array_of_posts->num_rows > 0) {
 					<div class="form-group">
 						<label class="control-label col-sm-2" for="article_body">Content</label>
 						<div class="col-sm-10">
-							<textarea name="article_body" class="form-control" rows="15" placeholder="content" id="article_body" required><?php echo "\"{$blog_post['body']}\""?></textarea>
+							<textarea name="article_body" class="form-control" rows="15" placeholder="content" id="article_body" required><?php echo "{$blog_post['body']}"?></textarea>
 						</div>
 					</div>
 					<div class="form-group">

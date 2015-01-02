@@ -45,16 +45,16 @@ function post($t, $b, $a) {
 	$article->execute();
 }
 
-// $edited_article = $conn->prepare("UPDATE articles SET title = (?), body = (?), WHERE id = (?)");
-// $edited_article->bind_param("ssi", $alter_title, $alter_body, $alter_id);
+$edited_article = $conn->prepare("UPDATE articles SET title = ?, body = ? WHERE id = ?;");
+$edited_article->bind_param("ssi", $alter_title, $alter_body, $alter_id);
 
-// function edit_article($title, $body, $id) {
-// 	global $edited_article, $alter_id, $alter_body, $alter_title;
-// 	$alter_id = $id;
-// 	$alter_body = $body;
-// 	$alter_title = $title;
-// 	$edited_article->execute();
-// }
+function edit_article($title, $body, $id) {
+	global $edited_article, $alter_id, $alter_body, $alter_title;
+	$alter_id = $id;
+	$alter_body = $body;
+	$alter_title = $title;
+	$edited_article->execute();
+}
 
 $del_article = $conn->prepare("DELETE FROM articles WHERE id = ?");
 $del_article->bind_param("i", $del_id);
