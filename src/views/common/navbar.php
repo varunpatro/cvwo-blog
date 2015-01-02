@@ -9,7 +9,8 @@ echo '<div class="container"><div class="navbar">
 												<li><a href="/">Home</a></li>
 												<li><a href="/user/db_reset.php">Reset Database</a></li>
 												<li><a href="/views/signup_page.php">Add User</a></li>
-												<li><a href="/views/post_article.php">Post Article</a></li>'; 
+												<li><a href="/views/post_article.php">Post Article</a></li>
+												<li><a href="/views/portal.php">Portal</a></li>'; 
 												if (!isset($_SESSION['logged_in'])) {
 														echo '<li class="pull-right"><a href="/views/login_page.php">Login</a></li>
 														<li class="pull-right"><a>Not logged in</a></li>';

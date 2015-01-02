@@ -1,7 +1,7 @@
 <?php
 require_once("../config/init.php");
 if (!isset($_SESSION['logged_in'])) {
-	$_SESSION['message'] = "You need to login to post an article. Please login here.";
+	$_SESSION['message'] = "You need to login to access the portal. Please login here.";
 	header("Location: /views/login_page.php");
 }
 ?>
@@ -9,13 +9,16 @@ if (!isset($_SESSION['logged_in'])) {
 <html>
 	<head>
 		<title>Writer's Portal</title>
+		<script src="../static/portal.js"></script>
 	</head>
 	<body>
 		<div class="container content-secondary">
-			<?php 
-			require_once("common/navbar.php");
-			require_once("common/alert.php");
-			alert('success');
+			<?php
+			if (isset($_SESSION['logged_in'])) {
+				require_once("common/navbar.php");
+				require_once("common/alert.php");
+				alert('success');
+			}
 			?>
 			
 			<div class="container">
@@ -26,15 +29,20 @@ if (!isset($_SESSION['logged_in'])) {
 				echo "Querying articles failed: (" . $conn->errno . ") " . $conn->error;
 				}
 				if ($blog_articles->num_rows > 0) {
-				echo "<ul>";
+				echo '<ul class="lead">';
 									while ($row = $blog_articles->fetch_assoc()) {
 									$id= $row['id'];
 									echo "<li><a href=\"/views/blog_post.php?id=$id\">" . $row['title'] . "</a></li>";
+									echo '<div class="btn-group" role="group">
+										<button type="button" onclick="edit(this,' .$id. ')" class="btn btn-warning">Edit</button>
+										<button type="button" onclick="del(this,' .$id. ')" class="btn btn-danger">Delete</button>
+										</div>';
 									}
 				echo "</ul>";
 				} else {
-				echo '<p class="lead">You have not written any articles! Please write one here: 
-				<span><a href="post_article.php">Post Article</a></span></p>';
+				echo '<div class="lead"><p>You have not written any articles!</p>' .
+				'<p> Please write one here: 
+				<span><a href="post_article.php">Post Article</a></span></p></div>';
 				}
 				?>
 			</div>

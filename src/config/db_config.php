@@ -45,6 +45,25 @@ function post($t, $b, $a) {
 	$article->execute();
 }
 
+$del_article = $conn->prepare("DELETE FROM articles WHERE id = ?");
+$del_article->bind_param("i", $del_id);
+
+function delete_article($article_id) {
+	global $del_id, $del_article;
+	$del_id = $article_id;
+	$del_article->execute();
+}
+
+function can_alter($article_id) {
+	global $conn;
+	$results = $conn->query("SELECT * FROM articles WHERE id = $article_id AND author = {$_SESSION['username']};");
+	if ($results->num_rows > 0) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 function db_reset () {
 	global $conn;
 	$db_reset_query = <<<RESET

@@ -20,11 +20,14 @@ if ($array_of_posts->num_rows > 0) {
 </head>
 <body>
 <?php require_once("common/navbar.php"); ?>
+<div class="container">
 <article>
-<h2><?php echo $blog_post["title"]; ?></h2>
-<h4><?php echo "Written by: $writer";?></h4>
-<h4><?php echo "Posted on: {$blog_post['reg_date']}"; ?></h4>
-<p class="lead"><?php echo str_replace("\n", "<br>", $blog_post["body"]); ?></p>
+<h1><?php echo $blog_post["title"]; ?></h1>
+<h5><?php echo "Written by: $writer";?></h5>
+<h5><?php echo "Posted on: {$blog_post['reg_date']}"; ?></h5>
+<p>_______________</p>
+<p class=""><?php echo str_replace("\n", "<br>", $blog_post["body"]); ?></p>
 </article>
+</div>
 </body>
 </html>
