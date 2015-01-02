@@ -28,7 +28,7 @@ require_once("../config/init.php");
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="password">Password</label>
 							<div class="col-sm-5">
-							<input class="form-control" id="password" type="password" name="password" placeholder="password" required>
+								<input class="form-control" id="password" type="password" name="password" placeholder="password" required>
 							</div>
 						</div>
 						<div class="form-group">
@@ -37,9 +37,11 @@ require_once("../config/init.php");
 							</div>
 						</div>
 					</fieldset>
-				</div>
-				</p>
+				</form>
+				
 			</div>
-			
-		</body>
-	</html>
+			</p>
+		</div>
+		
+	</body>
+</html>

@@ -102,6 +102,16 @@ function db_reset () {
 		PRIMARY KEY 	(id)
 	);
 
+	DROP TABLE IF EXISTS comments;
+	CREATE TABLE comments
+	(
+		id 				INT UNSIGNED NOT NULL AUTO_INCREMENT, # Unique ID for the comment
+		body 			VARCHAR(2000), 						  # Comment's body
+		author 			VARCHAR(25), 						  # Comment's writer
+		reg_date 		TIMESTAMP, 							  # Posting Time
+		PRIMARY KEY 	(id)
+	);
+
 	INSERT INTO users (name, username, password) VALUES ("administrator", "admin", "adminpass");
 RESET;
 
