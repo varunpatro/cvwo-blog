@@ -101,6 +101,8 @@ function db_reset () {
 		reg_date		TIMESTAMP, 							  # Posting Time
 		PRIMARY KEY 	(id)
 	);
+
+	INSERT INTO users (name, username, password) VALUES ("administrator", "admin", "adminpass");
 RESET;
 
 	$result = $conn->multi_query($db_reset_query);
