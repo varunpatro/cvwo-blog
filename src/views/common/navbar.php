@@ -15,6 +15,7 @@ echo '<div class="container"><div class="navbar">
 														<li class="pull-right"><a>Not logged in</a></li>';
 													} else {
 														echo '<li class="pull-right"><a href="/user/logout.php">Log Out</a></li>
+														<li class="pull-right"><a href="/views/portal.php">Writer\'s Portal</a></li>
 														<li class="pull-right"><a>Welcome ' . $_SESSION['username'] . '!</a></li>';
 													}
 											echo '</ul>

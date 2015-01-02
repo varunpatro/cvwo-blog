@@ -5,7 +5,7 @@ require_once("../config/db_config.php");
 $uname_query = login_query($_POST['username']);
 
 if ($uname_query->num_rows > 0) {
-	$_SESSION["message"] = "{$_POST['username']} has already been taken. Please enter another one.";
+	$_SESSION["message"] = "The username \"{$_POST['username']}\" has already been taken. Please enter another username.";
 	$_SESSION['temp_name'] = $_POST['name'];
 	header("Location: /views/signup_page.php");
 } else if ($_POST['password'] !== $_POST['re-password']) {

@@ -8,21 +8,10 @@ require_once("config/init.php");
 	<body>
 		<div class="container content-secondary">
 			<?php require_once("views/common/navbar.php");
-			
-				
-				if (isset($_SESSION['message'])) {
-					echo '<div class="alert alert-success container"><p>';
-						echo $_SESSION['message'];
-						unset($_SESSION['message']);
-					echo '</p></div>';
-				}
+			require_once("views/common/alert.php");
+			alert('success');
 			?>
 			
-			<!-- <div class="alert alert-danger" role="alert">
-				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-				<span class="sr-only">Error:</span>
-				Enter a valid email address
-			</div> -->
 			<div class="container">
 				<?php
 				require_once("config/db_config.php");
@@ -38,7 +27,7 @@ require_once("config/init.php");
 									}
 				echo "</ul>";
 				} else {
-				echo '<p>No articles at present!</p><span class="glyphicon glyphicon-pencil"></span>';
+				echo '<p class="lead">No articles at present!</p>';
 				}
 				?>
 			</div>
