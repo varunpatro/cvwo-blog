@@ -27,7 +27,7 @@ require_once("../config/init.php");
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
-								<button type="button" onclick="search()" class="btn btn-default">Search</button>
+								<button type="button" onclick="search()" class="btn btn-primary">Search</button>
 							</div>
 						</div>
 					</fieldset>
