@@ -21,10 +21,9 @@ if ($array_of_posts->num_rows > 0) {
 		<div class="container">
 			<article>
 				<h1><?php echo $blog_post["title"]; ?></h1>
-				<h5><?php echo "Written by: $writer";?></h5>
-				<h5><?php echo "Posted on: {$blog_post['reg_date']}"; ?></h5>
+				<p><?php echo "Written by: <strong>$writer</strong> on <strong>{$blog_post['reg_date']}</strong>"; ?></p>
 				<p>_______________</p>
-				<p class=""><?php echo str_replace("\n", "<br>", $blog_post["body"]); ?></p>
+				<p class="lead"><?php echo str_replace("\n", "<br>", $blog_post["body"]); ?></p>
 				<p>_______________</p>
 				<div id="comments">
 					<p><?php require_once("../user/comments.php"); ?></p>
