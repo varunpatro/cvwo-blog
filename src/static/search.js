@@ -7,6 +7,7 @@ function search() {
 	result_box.innerHTML = "Searching...";
 	search_xhr.onreadystatechange = function () {
 		result_box.innerHTML = search_xhr.response;
+		console.log(search_xhr.response);
 	}
 
 }

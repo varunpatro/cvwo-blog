@@ -14,16 +14,15 @@ if ($tag_query->num_rows > 0) {
 		array_push($blog_ids, $tag_row['blog_id']);
 
 	}
-	// echo gettype(intval(array_pop($blog_ids)));
-	// var_dump($blog_ids);
-	echo "hello";
+	echo "<h3>Articles with tag: $tag_content</h3>";
+	echo '<ul class="lead">';
 	while(count($blog_ids) > 0) {
-	// 	$art_id = intval(array_pop($blog_ids));
-	// 	$blog_art_query = $conn->("SELECT * from articles WHERE id = $art_id");
-	// 	$art_data = $blog_art_query->fetch_assoc();
-	// 	echo "<li><a href=\"/views/blog_post.php?id=$art_id\">" . $art_data['title'] . "</a></li>";
-		// echo "hello";
+		$art_id = intval(array_pop($blog_ids));
+		$blog_art_query = $conn->query("SELECT * from articles WHERE id = 1;");
+		$art_data = $blog_art_query->fetch_assoc();
+		echo "<li><a href=\"/views/blog_post.php?id=" . $art_id . "\">" . $art_data['title'] . "</a></li>";
 	}
+	echo '</ul>';
 
 } else {
 	echo '<p class="lead">No articles with this tag.</p>';
