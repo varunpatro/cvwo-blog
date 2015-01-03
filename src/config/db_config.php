@@ -53,9 +53,10 @@ function post_tags($blog_id, $tags) {
 	$b_id = $blog_id;
 	for ($counter = 0; $counter < count($tag_list); $counter++) {
 		$tag_content = $tag_list[$counter];
-		$tag->execute();
+		if ($tag_content !== "") {
+			$tag->execute();
+		}
 	}
-	return "done";
 
 }
 

@@ -18,7 +18,7 @@ if ($tag_query->num_rows > 0) {
 	echo '<ul class="lead">';
 	while(count($blog_ids) > 0) {
 		$art_id = intval(array_pop($blog_ids));
-		$blog_art_query = $conn->query("SELECT * from articles WHERE id = 1;");
+		$blog_art_query = $conn->query("SELECT * from articles WHERE id = $art_id;");
 		$art_data = $blog_art_query->fetch_assoc();
 		echo "<li><a href=\"/views/blog_post.php?id=" . $art_id . "\">" . $art_data['title'] . "</a></li>";
 	}

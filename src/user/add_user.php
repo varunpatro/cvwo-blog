@@ -20,11 +20,11 @@ if ($_SESSION['username'] !== "admin") {
 	} else {
 		add($_POST['username'], $_POST['password'], $_POST['name']);
 
-		$_SESSION["logged_in"] = true;
-		$_SESSION["username"] = $_POST["username"];
-		$_SESSION["name"] = $_POST["name"];
+		// $_SESSION["logged_in"] = true;
+		// $_SESSION["username"] = $_POST["username"];
+		// $_SESSION["name"] = $_POST["name"];
 
-		header("Location: /config/message_passing.php?m=add_user");
+		header("Location: /config/message_passing.php?m=add_user&newuser_username=" . $_POST['username']);
 	}
 }
 

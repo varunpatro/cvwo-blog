@@ -9,7 +9,8 @@ if (!isset($_SESSION['logged_in'])) {
 } else {
 	add_comment($_POST['comment_body'], $_SESSION['username'], $_SESSION['blog_id']);
 	unset($_SESSION['blog_id']);
-	header("Location: /config/message_passing.php?m=comment");
+	$_SESSION['message'] = "Comment Posted!";
+	header("Location: {$_SERVER['HTTP_REFERER']}");
 	
 }
 	

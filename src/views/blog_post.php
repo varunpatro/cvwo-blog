@@ -17,7 +17,11 @@ if ($array_of_posts->num_rows > 0) {
 		<script src="../static/comments.js"></script>
 	</head>
 	<body>
-		<?php require_once("common/navbar.php"); ?>
+		<?php
+			require_once("common/navbar.php");
+			require_once("../views/common/alert.php");
+			alert('success'); 
+		?>
 		<div class="container">
 			<article>
 				<h1><?php echo $blog_post["title"]; ?></h1>

@@ -18,7 +18,7 @@ echo '<div class="container"><div class="navbar">
 					echo '<li><a href="/views/post_article.php">Post Article</a></li>
 						<li class="pull-right"><a href="/user/logout.php">Log Out</a></li>
 						<li class="pull-right"><a href="/views/portal.php">Writer\'s Portal</a></li>
-						<li class="pull-right"><a>Welcome ' . $_SESSION['username'] . '!</a></li>';
+						<li class="pull-right"><a>Welcome ' . $_SESSION['name'] . '!</a></li>';
 				}
 				echo '</ul>
 					</div></div></div>

@@ -7,7 +7,9 @@
 	if ($article_tags->num_rows > 0) {
 		echo '<div class=""><p>_______________</p><p>Tags: </p>';
 		while ($row = $article_tags->fetch_assoc()) {
-			echo "<code class=\"btn btn-default\">{$row['tag']}</code>&nbsp;";
+			// if ($row['tag'] !== "") {
+				echo "<code class=\"btn btn-default\">{$row['tag']}</code>&nbsp;";
+			// }
 		}
 		echo "</div>";
 	} else {
