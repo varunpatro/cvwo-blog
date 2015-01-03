@@ -32,17 +32,44 @@ function login_query($login_username) {
 	return $conn->query("SELECT * FROM users WHERE username = \"$login_username\";");	
 }
 
+function last_id() {
+	global $conn;
+	$last_row_query = $conn->query("SELECT id FROM articles ORDER BY id DESC LIMIT 1;");
+	$last_row = $last_row_query->fetch_assoc();
+	return $last_row['id'];
+}
+
+
+function listify($data) {
+	return explode(",", $data);
+}
+
+$tag = $conn->prepare("INSERT INTO tags (blog_id, tag) VALUES (?, ?);");
+$tag->bind_param("is", $b_id, $tag_content);
+
+function post_tags($blog_id, $tags) {
+	global $conn, $tag, $b_id, $tag_content;
+	$tag_list = listify(str_replace(" ", "", $tags));
+	$b_id = $blog_id;
+	for ($counter = 0; $counter < count($tag_list); $counter++) {
+		$tag_content = $tag_list[$counter];
+		$tag->execute();
+	}
+	return "done";
+
+}
 
 $article = $conn->prepare("INSERT INTO articles (title, body, author) VALUES (?, ?, ?)");
 $article->bind_param("sss", $title, $body, $author);
 
 
-function post($t, $b, $a) {
+function post($art_title, $art_body, $art_tags, $art_author) {
 	global $title, $body, $author, $article;
-	$title = $t;
-	$body = $b;
-	$author = $a;
+	$title = $art_title;
+	$body = $art_body;
+	$author = $art_author;
 	$article->execute();
+	return post_tags(last_id(), $art_tags);
 }
 
 $edited_article = $conn->prepare("UPDATE articles SET title = ?, body = ? WHERE id = ?;");
@@ -121,6 +148,16 @@ function db_reset () {
 		blog_id 		INT UNSIGNED,						  # Blog Post's ID
 		body 			VARCHAR(2000), 						  # Comment's body
 		author 			VARCHAR(25), 						  # Comment's writer
+		reg_date 		TIMESTAMP, 							  # Posting Time
+		PRIMARY KEY 	(id)
+	);
+
+	DROP TABLE IF EXISTS tags;
+	CREATE TABLE tags
+	(
+		id 				INT UNSIGNED NOT NULL AUTO_INCREMENT, # Unique ID for the tags
+		blog_id			INT UNSIGNED, 						  # Blog Post's ID
+		tag 			VARCHAR(25), 						  # Tag name
 		reg_date 		TIMESTAMP, 							  # Posting Time
 		PRIMARY KEY 	(id)
 	);

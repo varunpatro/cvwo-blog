@@ -23,6 +23,8 @@ if ($array_of_posts->num_rows > 0) {
 				<h1><?php echo $blog_post["title"]; ?></h1>
 				<p><?php echo "Written by: <strong>$writer</strong> on <strong>{$blog_post['reg_date']}</strong>"; ?></p>
 				<p>_______________</p>
+				<p><?php echo "Tags:"; require_once('../user/tags.php'); ?></p>
+				<p>_______________</p>
 				<p class="lead"><?php echo str_replace("\n", "<br>", $blog_post["body"]); ?></p>
 				<p>_______________</p>
 				<div id="comments">

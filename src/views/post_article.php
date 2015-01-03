@@ -26,8 +26,14 @@ if (!isset($_SESSION['logged_in'])) {
 						</div>
 					</div>
 					<div class="form-group">
+						<label class="control-label col-sm-2" for="article_tags">Tags</label>
+						<div class="col-sm-10">
+							<input class="form-control" id="article_tags" type="text" name="article_tags" placeholder="enter tags separated by commas">
+						</div>
+					</div>
+					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-default">Post</button>
+							<button type="submit" class="btn btn-primary">Post</button>
 						</div>
 					</div>
 				</fieldset>
