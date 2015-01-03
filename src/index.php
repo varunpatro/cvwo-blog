@@ -27,7 +27,7 @@ require_once("config/init.php");
 				if ($blog_articles->num_rows > 0) {
 				echo '<ul class="lead">';
 									while ($row = $blog_articles->fetch_assoc()) {
-									$id= $row['id'];
+									$id = $row['id'];
 									echo "<li><a href=\"/views/blog_post.php?id=$id\">" . $row['title'] . "</a></li>";
 									}
 				echo "</ul>";
