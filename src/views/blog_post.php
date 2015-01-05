@@ -14,7 +14,6 @@ if ($array_of_posts->num_rows > 0) {
 <html>
 	<head>
 		<title><?php echo $blog_post["title"]; ?> </title>
-		<script src="../static/comments.js"></script>
 	</head>
 	<body>
 		<?php

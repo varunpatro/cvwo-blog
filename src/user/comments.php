@@ -1,10 +1,15 @@
 <?php
 require_once("../config/db_config.php");
+
+// retrieve the relevant blog post
 $blog_id = $_GET['id'];
+
+// retrieve the comments associated with the relevant blog post
 $array_of_comments = $conn->query("SELECT * FROM comments WHERE blog_id = $blog_id;");
 echo '<legend><h3 class="form-signin-heading">Comments</h3></legend>';
 if ($array_of_comments->num_rows > 0) {
 	echo '<ul>';
+	// diplay the comments associated with the relevant blog post
 		for ($counter = 0; $counter < $array_of_comments->num_rows; $counter++) {
 			$blog_comment = $array_of_comments->fetch_assoc();
 			$comment_writer = login_query($blog_comment['author'])->fetch_assoc()['name'];
@@ -16,6 +21,8 @@ if ($array_of_comments->num_rows > 0) {
 } else {
 			echo '<div class="lead"><p>No comments yet on this article.<p></div>';
 }
+
+// display the form for adding comments
 echo '<form class="form-horizontal" action="/user/add_comment.php" method="POST">
 			<fieldset>
 					<div class="form-group">

@@ -118,8 +118,6 @@ function add_comment($b, $w, $i) {
 function db_reset () {
 	global $conn;
 	$db_reset_query = <<<RESET
-	USE blog;
-
 	DROP TABLE IF EXISTS users;
 	CREATE TABLE users
 	(

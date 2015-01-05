@@ -33,8 +33,8 @@ A0131729E
 2. add better UI -- done
 3. create a writer's portal -- done
 4. allow writer's to edit/delete their articles -- done
-5. allow writers to add tags to the post
-6. allow users to search for posts with tags
+5. allow writers to add tags to the post --done
+6. allow users to search for posts with tags --done
 7. allow users to comment on the posts -- done
-8. allow users to share posts
-9. redirection to the previous page instead of home page.
+8. redirection to the previous page instead of home page. --done
+9. allow users to share posts
