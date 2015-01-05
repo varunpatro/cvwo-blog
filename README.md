@@ -3,6 +3,8 @@ A0131729E
 
 #CVWO 2014 Assignment 1
 
+Application hosted at: http://vpatro.me
+
 ##Basic use cases
 
 1. Everyone can read all articles posted on the blog.
