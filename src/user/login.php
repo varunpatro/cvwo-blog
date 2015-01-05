@@ -10,7 +10,8 @@ if ($login_results->num_rows > 0) {
 		$_SESSION["logged_in"] = true;
 		$_SESSION["username"] = $row["username"];
 		$_SESSION["name"] = $row["name"];
-		header("Location: /config/message_passing.php?m=login");
+		header("Location: {$_SERVER['HTTP_REFERER']}");
+		// header("Location: /config/message_passing.php?m=login");
 	} else {
 		$_SESSION["message"] = "Incorrect password. Try again.";
 		header("Location: /views/login_page.php");
