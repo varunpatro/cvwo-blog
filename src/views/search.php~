@@ -38,7 +38,7 @@ require_once("../config/init.php");
 		<div class="container" id="search_results">
 		<?php 
 		      if (isset($_GET['tag'])) {
-		      	$_SESSION['tag_search_through_session'] = $_GET['tag'];	      	 
+		      	$_SESSION['tagsearch'] = $_GET['tag'];	      	 
 			require_once('../user/tag_search.php');
 			 } ?>
 		</div>

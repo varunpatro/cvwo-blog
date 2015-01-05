@@ -2,7 +2,7 @@
 
 require_once("../config/db_config.php");
 
-if (isset($_GET['tag'])) {
+if (isset($_GET['tag']) {
    $tag_content = $_GET['tag'];
 } else {
   $tag_content = $_SESSION['tag_search_through_session'];

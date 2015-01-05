@@ -4,7 +4,7 @@ function search() {
 	var search_xhr = new XMLHttpRequest();
 	search_xhr.open("GET", "/user/tag_search.php?tag=" + tag);
 	search_xhr.send();
-	result_box.innerHTML = "Searching...";
+	result_box.innerHTML = "<p class=\"lead\">Searching...</p>";
 	search_xhr.onreadystatechange = function () {
 		result_box.innerHTML = search_xhr.response;
 		console.log(search_xhr.response);
